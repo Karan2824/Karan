@@ -1,0 +1,49 @@
+﻿@page
+@model Karan.Pages.Books.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Book.Bookname" class="control-label"></label>
+                <input asp-for="Book.Bookname" class="form-control" />
+                <span asp-validation-for="Book.Bookname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Plot" class="control-label"></label>
+                <input asp-for="Book.Plot" class="form-control" />
+                <span asp-validation-for="Book.Plot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Releaseyear" class="control-label"></label>
+                <input asp-for="Book.Releaseyear" class="form-control" />
+                <span asp-validation-for="Book.Releaseyear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Price" class="control-label"></label>
+                <input asp-for="Book.Price" class="form-control" />
+                <span asp-validation-for="Book.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
